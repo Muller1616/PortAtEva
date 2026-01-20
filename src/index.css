@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  /* Dark Mode Only (Enforced) */
+  --color-primary: #050816;
+  --color-secondary: #aaa6c3;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #aaa6c3;
+  --bg-gradient-start: #0f172a;
+  --bg-gradient-end: #0f172a;
+
+  color-scheme: dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: var(--color-primary);
+  color: var(--color-text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#root {
+  width: 100%;
+}
+
+.black-gradient {
+  background: #000000;
+  /* Stays black on both ideally, or adjust */
+  background: -webkit-linear-gradient(to right, #434343, #000000);
+  background: linear-gradient(to right, #434343, #000000);
+}
+
+.violet-gradient {
+  background: #804dee;
+  background: linear-gradient(-90deg, #804dee 0%, rgba(60, 51, 80, 0) 100%);
+  background: -webkit-linear-gradient(-90deg,
+      #804dee 0%,
+      rgba(60, 51, 80, 0) 100%);
+}
+
+.green-pink-gradient {
+  background: "#00cea8";
+  background: linear-gradient(90.13deg, #00cea8 1.9%, #bf61ff 97.5%);
+  background: -webkit-linear-gradient(-90.13deg, #00cea8 1.9%, #bf61ff 97.5%);
+}
+
+/* Swiper Pagination Customization */
+.swiper-pagination-bullet {
+  background: #aaa6c3 !important;
+  /* Secondary color for inactive */
+  opacity: 0.5 !important;
+  width: 10px !important;
+  height: 10px !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: #915eff !important;
+  /* Primary/Accent color for active */
+  opacity: 1 !important;
+  width: 12px !important;
+  height: 12px !important;
+}
+
+/* Swiper Navigation Arrows */
+.swiper-button-prev,
+.swiper-button-next {
+  color: #915eff !important;
+  /* Primary/Accent color */
+  font-weight: bold;
+  width: 50px !important;
+  height: 50px !important;
+  background: rgba(145, 94, 255, 0.1) !important;
+  border-radius: 50% !important;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease !important;
+  z-index: 50 !important;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  color: #ffffff !important;
+  background: rgba(145, 94, 255, 0.3) !important;
+  transform: scale(1.1);
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 20px !important;
+  font-weight: 900 !important;
+}
+
+/* Ensure arrows are visible on mobile */
+@media (max-width: 640px) {
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  .swiper-button-prev::after,
+  .swiper-button-next::after {
+    font-size: 16px !important;
+  }
+}
