@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Tilt } from "react-tilt";
+import Tilt from "react-parallax-tilt";
 import { SiReact, SiFlutter } from "react-icons/si";
 import { FaLaptopCode, FaServer, FaLayerGroup, FaRobot } from "react-icons/fa";
 
@@ -61,18 +61,18 @@ const About = () => {
             }
             const blob = await response.blob();
             const url = window.URL.createObjectURL(blob);
-            
+
             // Create a temporary link element
             const link = document.createElement('a');
             link.href = url;
             link.download = 'Mulugeta_CV.pdf';
             link.style.display = 'none';
-            
+
             // Append to body, click, and remove
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
-            
+
             // Clean up the object URL
             window.URL.revokeObjectURL(url);
         } catch (error) {
